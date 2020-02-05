@@ -1,0 +1,134 @@
+/**
+ * Make body at least 100% height
+ * You can also use a combination
+ * of height: 100% in <html> and
+ * min-height: 100% in <body>.
+ */
+ body{
+   background-color: rgb(167, 179, 196);
+ }
+ .holy-grail {
+	min-height: 100vh;
+}
+header{
+word-wrap: break-word;
+display: flex;
+justify-content: space-evenly;
+background-color: lightgrey;
+border: gray solid 1px;
+width:100%
+}
+
+.login{
+ display: flex-end;
+
+}
+form{
+  display: inline;
+  justify-content:center;
+  margin-top: 40px;
+}
+
+/* Makes the search bar in 
+the center of page */
+
+
+
+  
+
+/**
+ * Let's do a column distribution
+ * (mobile first)
+ * flex value is 1 1 auto to make
+ * body skrinkable and extensible
+ */
+.holy-grail,
+.holy-grail-body {
+  background-color: lightblue;
+	display: flex;
+  flex-direction: column;
+  height: 900px;
+}
+
+/**
+ * Content body item is made
+ * extensible too.
+ */
+.holy-grail-content {
+  /* background-color: lightslategrey; */
+  font-size: 30px;
+}
+
+/**
+ * Put the first sidebar before content.
+ * If you need sidebar to be before content
+ * only in big screen put those 3 next lines
+ * in @media block.
+ */
+ .holy-grail-sidebar-1-hg-sidebar{
+  /* margin-top: 70px; */
+  order: -1;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+/**
+ * Let's introduce bigger screen
+ */
+
+@media (min-width: 768px) {
+	/**
+	 * Body items are now side by side
+	 */
+	.holy-grail-body {
+    flex-direction: row;
+	}
+
+	/**
+	 * Sidebars have a basic 260 width
+	 * and are not really flexible anymore
+	 */
+	.hg-sidebar {
+
+   
+	}
+}
+/* footer{
+  height: 100px;
+  background-color: lightslategray;
+  flex: 0 0 auto;
+} */
+  /* footer {
+  flex-shrink: 0;
+  align-items: stretch;
+  min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+} */
+
+.mr-3{
+  border: solid 1px black;
+  box-shadow: 10px 10px 5px grey;
+  word-break: break-all;
+  margin-left: 10px;
+}
+.media{
+  /* box-shadow: 10px 10px 5px grey; */
+
+}
+footer{
+display: flex;
+justify-content: center;
+background-color: lightgrey;
+border: gray solid 1px;
+width:100%
+
+}
+
+@media (min-width: 960px) {
+	.main-header .container {
+		justify-content: space-between;
+	}
+}
