@@ -1,0 +1,21 @@
+Title: Employee Confirmation Tool . 
+
+Description: This application is created as one small part of a post MVP Human Resource Software. As of now the implementations includes a function that looks to confirm an employee. 
+Employee Confirmation Tool is meant for use by agencies HR dept and not for the general public use.The Employee Confirmation Tool is lo-fi by design as it will only have bare minimum usability. Employee Confirmation Tool is compatible for Desktop/Mobile/ Tablets!!
+
+Wireframes: Mockups of your app on desktop, tablet, and mobile.. Coming SOON
+
+API: http://dummy.restapiexample.com/api/v1/employees
+List of Name To Search For !
+"Cedric Kelly"
+"Colleen Hurst"
+"Paul Byrd"
+
+
+MVP: My Goal is to be able to search through the API and pull value that matches my input value by the employees first and last name,Having Lo-FI is understanding who the way the Employee Confirmation Tool is being used by.
+
+Post-MVP: Post MVP I would like to add Employee Confirmation Tool to a larger application that functions as an agencies HR software.
+This would include building upon the current function and adding a hyperlink to the confirmed Employee linking to a broader Profile of Employee.
+I would also embed the Employee Confirmation Tool to parent applications that have a broader scope of services. Employee Confirmation Tool will be one tool as part of an Agencies HR SoftWare Capabilities
+
+ 
