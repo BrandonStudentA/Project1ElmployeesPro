@@ -2,10 +2,14 @@
 <html lang="en">
 
 <head>
+  <!-- SOME CODE WAS FOUND ON https://flexbox.ninja/  -->
+  <!-- The carousel was found on bootstrap  using bootstrapcdn -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Anton|Roboto|Rubik&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Anton|Rubik&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
@@ -18,87 +22,63 @@
   <header>
     <!-- header content -->
     <img src="" height="128px" width="128px" alt="">
-    <h1>Resembelance</h1>
-    <div>
-      <input class="login" type="text" placeholder="UseerName"><br>
+    <h1>Resembel</h1>
+    <div class="signIn">
+      <input class="login" type="text" placeholder="UserName"><br>
       <input class="login" type="text" placeholder="PassWord">
+      <!-- <button type="submit"> Login In</button> -->
     </div>
   </header>
-    
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img
+          src="https://images.unsplash.com/photo-1551836022-4c4c79ecde51?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"
+          class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img
+          src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+          class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://images.unsplash.com/photo-1573496130407-57329f01f769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" class="d-block w-100" alt="...">
+      </div>
+    </div>
+  </div>
+
   <form class="form-inline">
     <div class="form-group mx-sm-3 mb-2">
       <input type="text" class="form-control" id="inputsearch" placeholder="Search">
     </div>
     <button type="submit" class="btn btn-primary mb-2">Confirm identity</button>
-  </form>
+  </form><br>
 
   <div class="holy-grail-content">
     <!-- Main page content -->
-    <a href=""> </a>
-    <!-- <button id="profile">
-          
-        </button> -->
-  </div>
-  
-    <div class="holy-grail-sidebar-1-hg-sidebar">
-      <!-- sidebar 1 content -->
-      <ul class="list-unstyled">
-        <label for="">
-          <h5 class="mt-0 mb-1">Human Resource </h5>
-        </label>
-        <li class="media">
-          <img
-            src="https://images.unsplash.com/photo-1551836022-4c4c79ecde51?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"
-            height="128px" width="128px" class="mr-3" alt="...">
-          <div class="media-body">
-
-
-          </div>
-        </li>
-        <label for="">
-          <h5 class="mt-0 mb-1">List-based media </h5>
-        </label>
-        <li class="media">
-          <img
-            src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
-            height="128px" width="128px" class="mr-3" alt="...">
-          <div class="media-body">
-
-
-          </div>
-        </li>
-        <label for="">
-          <h5 class="mt-0 mb-1">List-based media </h5>
-        </label>
-        <li class="media">
-          <img
-            src="https://images.unsplash.com/photo-1527179528411-4219e0714bcc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80"
-            height="128px" width="128px" class="mr-3" alt="...">
-          <div class="media-body">
-
-
-          </div>
-        </li>
-      </ul>
-
-    </div>
     
-    <div class="holy-grail-sidebar-2 hg-sidebar">
+  
+  </div>
 
-      <!-- sidebar 2 content -->
-
-    </div>
-
-
-
-    <footer>
-     <p> 	&copy; Brandon Gastineau </p>
-    </footer>
+  
 
 
 
+  <footer>
+    <p> &copy; Brandon Gastineau </p>
+  </footer>
 
 
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

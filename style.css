@@ -1,13 +1,20 @@
 /**
+ * SOME CODE WAS FOUND ON https://flexbox.ninja/ 
  * Make body at least 100% height
  * You can also use a combination
  * of height: 100% in <html> and
  * min-height: 100% in <body>.
  */
- body{
+body{
    background-color: rgb(167, 179, 196);
+   
  }
- .holy-grail {
+h1{
+   word-wrap: normal;
+   font-family: 'Anton', sans-serif;
+ }
+
+.holy-grail {
 	min-height: 100vh;
 }
 header{
@@ -16,7 +23,11 @@ display: flex;
 justify-content: space-evenly;
 background-color: lightgrey;
 border: gray solid 1px;
-width:100%
+width:100%;
+}
+
+header h1{
+  margin: auto;
 }
 
 .login{
@@ -26,16 +37,21 @@ width:100%
 form{
   display: inline;
   justify-content:center;
-  margin-top: 40px;
+
+  margin-top: 100px;
+  
+  
+}
+#carouselExampleSlidesOnly{
+
+  height: 300px;
+  overflow:hidden;
+  object-position: center;
 }
 
-/* Makes the search bar in 
-the center of page */
-
-
-
-  
-
+#carouselExampleSlidesOnly img{
+  object-fit: cover;
+}
 /**
  * Let's do a column distribution
  * (mobile first)
@@ -57,6 +73,7 @@ the center of page */
 .holy-grail-content {
   /* background-color: lightslategrey; */
   font-size: 30px;
+  justify-content: center;
 }
 
 /**
@@ -68,16 +85,28 @@ the center of page */
  .holy-grail-sidebar-1-hg-sidebar{
   /* margin-top: 70px; */
   order: -1;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
+  position: fixed;
 }
 
+.results{
+  width:100%;
+  text-align: center;
+  background-color:lightslategray;
+}
+
+.results h1{
+  font-family: 'Rubik', sans-serif;
+}
+.results h2{
+  font-family: 'Roboto', sans-serif;
+}
 /**
  * Let's introduce bigger screen
  */
+ .signIn{
+   margin: auto 0;
 
-@media (min-width: 768px) {
+ }
 	/**
 	 * Body items are now side by side
 	 */
@@ -85,28 +114,6 @@ the center of page */
     flex-direction: row;
 	}
 
-	/**
-	 * Sidebars have a basic 260 width
-	 * and are not really flexible anymore
-	 */
-	.hg-sidebar {
-
-   
-	}
-}
-/* footer{
-  height: 100px;
-  background-color: lightslategray;
-  flex: 0 0 auto;
-} */
-  /* footer {
-  flex-shrink: 0;
-  align-items: stretch;
-  min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-} */
 
 .mr-3{
   border: solid 1px black;
@@ -114,21 +121,31 @@ the center of page */
   word-break: break-all;
   margin-left: 10px;
 }
-.media{
-  /* box-shadow: 10px 10px 5px grey; */
 
-}
 footer{
 display: flex;
 justify-content: center;
 background-color: lightgrey;
 border: gray solid 1px;
-width:100%
-
+width:100%;
+font-family: 'Roboto', sans-serif;
 }
 
-@media (min-width: 960px) {
-	.main-header .container {
-		justify-content: space-between;
-	}
+.results{
+  align-items: center;
+  justify-content: center;
+}
+
+#profile{
+  border: solid black 2px;
+  margin-bottom: 60px;
+}
+ 
+
+
+@media (max-width:460px){
+  header{
+    display:block;
+    text-align: center;
+  }
 }

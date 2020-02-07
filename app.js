@@ -1,12 +1,12 @@
 
-// const BASE_URL = 'http://dummy.restapiexample.com/api/v1/employees'
-const BASE_URL = 'http://dummy.restapiexample.com/api/v1/employees'
-const BASE_URL2 = 'https://randomuser.me/api/?inc=picture,phone,email,login'
-  console.log(BASE_URL2)
 let employeesArr = []
+let employeeDataArr = []
+
+const BASE_URL = 'http://dummy.restapiexample.com/api/v1/employees'
+
+//   console.log(BASE_URL2)
 
 
-// console.log(BASE_URL)
 let button = document.querySelector('button');
 let input = document.querySelector('#inputsearch');
 let list = document.querySelector('.holy-grail-content');
@@ -16,57 +16,66 @@ let list = document.querySelector('.holy-grail-content');
 // button.addEventListner, now you can filter through results
 let employeeArray = []
 
-window.addEventListener('load', async () => {
-  const res = await axios.get(`${BASE_URL} `)
-  let employees = res.data.data
 
-  employeesArr.push(employees)
-  
+const getApiData = async () => {
+  const employeeData = await axios.get(BASE_URL)
+  const employees = employeeData.data.data
 
-  
-})
+  const BASE_URL2 = `https://randomuser.me/api/?results=${employees.length}&inc=picture,phone,email,login`
+  const randomUsers = await axios.get(BASE_URL2)
+  employeeArray = await assignRandomUserToEmployee(employees, randomUsers.data.results)
+}
 
-
-button.addEventListener('click', (event) => {
-  event.preventDefault()
-  list.innerHTML = ""
-  
-  // if (input.value)
-  // let res = await axios.get(`${BASE_URL}${input.value}`)
-  // let res = await axios.get(`${BASE_URL}`)
-  // employees = res.data.data
-  // console.log(employees[0].employee_name)
-
-
-  for (let i = 0; i < 25; i++) {
-    console.log(employeesArr[0][i].employee_name, input.value)
-    // const employee = employees[i]
-    if (employeesArr[0][i].employee_name === input.value) {
-
-      let emps = employeesArr[0][i]
-      let keys = Object.keys(emps)
-      keys.forEach(key => {
-        console.log(key, emps[key])
-
-        list.innerText += `${emps[key]}`
-
-      })
+const assignRandomUserToEmployee = (employees, randomUsers) => {
+  let data = []
+  for (let i = 0; i < employees.length; i++) {
+    const employee = employees[i];
+    const user = randomUsers[i]
+    // console.log(user, employee)
+    const mappedData = {
+      ID: employee.id,
+      name: employee.employee_name,
+      phone_number: user.phone,
+      salary: employee.employee_salary,
+      avatar: user.picture.large
     }
 
-    // button.addEventListener(click, async () => {
-    //   const res = await axios.get(`${BASE_URL2} `)
-    //   let profile = res.data.email
-
-  //  console.log(profile)
-    // })
-    // else {
-    //   alert('employee not found ');
-    // }
-
-    // list.innerHTML += `<div><h1>Employee ID: </h1><h1>Name: ${employee.employee_name}</h1><br><h2>Salary:</h2> </h3>${employee.employee_salary}<br><h2>age:</h2> <h3>${employee.employee_age}</h3></div>`
-
+    data.push(mappedData)
   }
-  //   return 'Employee Not Found';
+  return data
+}
+//finding employee by search 
+
+const findEmployee = (employeeName) => {
+  const resp = employeeArray.filter(employee => {
+    if (employee.name == employeeName) {
+      return list.innerHTML = `<div class="results"> <h1>Name: ${employee.name}</h1> <h2>Phone: ${employee.phone_number}</h2><h3>Salary: $ ${employee.salary}</h3> <img id=profile src='${employee.avatar}'></img></div>`;
+    }
+
+  })
+
+  // console.log('employeeArray',employeeArray)
+  console.log('resp', resp)
+
+}
 
 
+
+
+
+window.addEventListener('load', async () => {
+  await getApiData()
+  let value = ''
+  input.addEventListener('change', (event) => {
+    value = event.target.value
+    console.log(value)
+  })
+  button.addEventListener('click', (event) => {
+    event.preventDefault()
+    findEmployee(value)
+    list.scrollIntoView()
+    input.value = ''
+  })
 })
+
+
