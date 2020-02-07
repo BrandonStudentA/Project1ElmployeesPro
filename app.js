@@ -4,9 +4,6 @@ let employeeDataArr = []
 
 const BASE_URL = 'http://dummy.restapiexample.com/api/v1/employees'
 
-//   console.log(BASE_URL2)
-
-
 let button = document.querySelector('button');
 let input = document.querySelector('#inputsearch');
 let list = document.querySelector('.holy-grail-content');
@@ -58,9 +55,6 @@ const findEmployee = (employeeName) => {
   console.log('resp', resp)
 
 }
-
-
-
 
 
 window.addEventListener('load', async () => {
