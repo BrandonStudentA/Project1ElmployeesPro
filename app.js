@@ -28,7 +28,7 @@ const assignRandomUserToEmployee = (employees, randomUsers) => {
   for (let i = 0; i < employees.length; i++) {
     const employee = employees[i];
     const user = randomUsers[i]
-    // console.log(user, employee)
+    
     const mappedData = {
       ID: employee.id,
       name: employee.employee_name,
@@ -51,7 +51,6 @@ const findEmployee = (employeeName) => {
 
   })
 
-  // console.log('employeeArray',employeeArray)
   console.log('resp', resp)
 
 }

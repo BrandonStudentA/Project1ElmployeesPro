@@ -1,9 +1,8 @@
 Title: Employee Confirmation Tool . 
-
+ link to live app http://hrtool.surge.sh/
 Description: This application is created as one small part of a post MVP Human Resource Software. As of now the implementations includes a function that looks to confirm an employee. 
 Employee Confirmation Tool is meant for use by agencies HR dept and not for the general public use.The Employee Confirmation Tool is lo-fi by design as it will only have bare minimum usability. Employee Confirmation Tool is compatible for Desktop/Mobile/ Tablets!!
 
-Wireframes: Mockups of your app on desktop, tablet, and mobile.. Coming SOON
 
 API: http://dummy.restapiexample.com/api/v1/employees
 List of Name To Search For !
